@@ -2,6 +2,7 @@ use chrono::{Datelike, Utc};
 use rand::{thread_rng, Rng};
 use reqwest::Client;
 
+// api to nytimes wordle for words.
 pub async fn fetch_word_from_api() -> Result<String, reqwest::Error> {
     let date = generate_random_date_in_2022_to_present();
     let api_url = format!("https://www.nytimes.com/svc/wordle/v2/{}.json", date);
@@ -15,6 +16,7 @@ pub async fn fetch_word_from_api() -> Result<String, reqwest::Error> {
     Ok(solution)
 }
 
+// random date for random words might update later
 fn generate_random_date_in_2022_to_present() -> String {
     let mut rng = thread_rng();
     let current_date = Utc::now();

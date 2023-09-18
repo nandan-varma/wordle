@@ -1,5 +1,6 @@
 use raylib::prelude::KeyboardKey;
 
+// i know i know
 pub fn map_key_to_char(key: KeyboardKey) -> Option<char> {
     match key {
         KeyboardKey::KEY_A => Some('A'),
